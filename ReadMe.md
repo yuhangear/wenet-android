@@ -186,7 +186,7 @@ If you want to learn more about the WENET model, you can read the link. This art
   - `Android Emulator`
   - `Android SDK Platform-tool`
 
-![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/06.png)
+![Alt text](https://github.com/yuhangear/wenet-android/blob/main/img/06.png)
 
 + Get your Android phone ready and turn on the USB debug option. When you're ready, connect your phone to your computer.
 + Prepare wenet Android project
@@ -198,14 +198,14 @@ If you want to learn more about the WENET model, you can read the link. This art
     + Put the appeal file in the wenet-Android project file path in the Window environment
       + wenet-main\runtime\device\android\wenet\app\src\main\assets\
   + ` The contents of the directory(core) directly copied to ` device/android/wenet/app/SRC/main/CPP ` directory
-  + ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/04.png)
+  + ![Alt text](https://github.com/yuhangear/wenet-android/blob/main/img/04.png)
 + build and   run
   + Import the project in Android Studio
-  + ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/02.png)
-  + ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/03.png)
+  + ![Alt text](https://github.com/yuhangear/wenet-android/blob/main/img/02.png)
+  + ![Alt text](https://github.com/yuhangear/wenet-android/blob/main/img/03.png)
   + Click the run
 
-![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/01.png)
+![Alt text](https://github.com/yuhangear/wenet-android/blob/main/img/01.png)
 
-![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/05.png)
+![Alt text](https://github.com/yuhangear/wenet-android/blob/main/img/05.png)
 
