@@ -198,13 +198,13 @@ If you want to learn more about the WENET model, you can read the link. This art
     + 将上诉文件放在window环境下wenet-android项目文件路径中
       + wenet-main\runtime\device\android\wenet\app\src\main\assets\
   + ` The contents of the directory(core) directly copied to ` device/android/wenet/app/SRC/main/CPP ` directory
-  + ![](C:\Users\baba\Documents\GitHub\wenet-android\git\img\04.png)
+  + ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/04.png)
 + build and   run
   + Import the project in Android Studio
-  + ![](C:\Users\baba\Documents\GitHub\wenet-android\git\img\02.png)
-  + ![](C:\Users\baba\Documents\GitHub\wenet-android\git\img\03.png)
+  + ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/02.png)
+  + ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/03.png)
   + Click the run
 
-![](C:\Users\baba\Documents\GitHub\wenet-android\git\img\01.png)
+![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/01.png)
 
-![](C:\Users\baba\Documents\GitHub\wenet-android\git\img\05.png)
+![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/05.png)
