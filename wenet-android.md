@@ -186,7 +186,7 @@ If you want to learn more about the WENET model, you can read the link. This art
   - `Android Emulator`
   - `Android SDK Platform-tool`
 
-![preview](https://pic1.zhimg.com/v2-efb5f6a3fb243712c81d5c4aeabc30b4_r.jpg)
+![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/06.png)
 
 + Get your Android phone ready and turn on the USB debug option. When you're ready, connect your phone to your computer.
 + Prepare wenet Android project
