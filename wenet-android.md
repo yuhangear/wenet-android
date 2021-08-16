@@ -195,7 +195,7 @@ If you want to learn more about the WENET model, you can read the link. This art
   + Need to train in the service area (Linux) model related files, download to the Window environment
     + exp/sp_spec_aug/final.zip
     + data/dict/words.txt（Note that there may be other names）
-    + 将上诉文件放在window环境下wenet-android项目文件路径中
+    + Put the appeal file in the wenet-Android project file path in the Window environment
       + wenet-main\runtime\device\android\wenet\app\src\main\assets\
   + ` The contents of the directory(core) directly copied to ` device/android/wenet/app/SRC/main/CPP ` directory
   + ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/04.png)
