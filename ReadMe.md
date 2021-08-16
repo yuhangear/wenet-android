@@ -208,3 +208,5 @@ If you want to learn more about the WENET model, you can read the link. This art
 ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/01.png)
 
 ![Alt text](https://github.com/yuhangear/wenet-android/tree/main/img/05.png)
+
+![Alt text](https://github.com/yuhangear/kaldi-android/blob/main/img/1.png)
