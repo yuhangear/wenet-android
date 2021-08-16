@@ -42,10 +42,10 @@ If you want to learn more about the WENET model, you can read the link. This art
 
   Setting the configuration file
 
-  + train_conformer.yaml ：offline的模型
+  + train_conformer.yaml ：offline model
   + train_conformer_bidecoder_large.yaml ：full attention
-  + train_u2++_conformer.yaml：U2++的attention存在L2R和R2L两个decoder
-  + train_unified_conformer.yaml ：online的模型
+  + train_u2++_conformer.yaml：U2++ attention exists in L2R and R2L decoder
+  + train_unified_conformer.yaml ：online model
 
   When training the online model, change train_config=conf/train_unified_conformer.yaml in run.sh
 
