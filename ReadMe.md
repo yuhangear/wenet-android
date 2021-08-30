@@ -2,22 +2,22 @@
 
 
 
-If you want to learn more about the WENET model, you can read the link. This article focuses on the detailed process of training and deployment.
+This article focuses on the detailed process of training and deployment. If you want to learn more about the WENET model, you can read the link. 
 
 + https://zhuanlan.zhihu.com/c_1346070871304269824
 + http://placebokkk.github.io/wenet/2021/06/04/asr-wenet-nn-1.html
 
 ### Configure the WENET environment
 
-+ Download wenet
++ **Download wenet**
 
   ```
   git clone https://github.com/wenet-e2e/wenet.git
   ```
 
-+ install Conda: https://docs.conda.io/en/latest/miniconda.html
++ **install Conda**: https://docs.conda.io/en/latest/miniconda.html
 
-+ Create the Conda environment
++ **Create the Conda environment**
 
   ```
   conda create -n wenet python=3.8
@@ -32,7 +32,7 @@ If you want to learn more about the WENET model, you can read the link. This art
   conda install pytorch torchvision torchaudio=0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
   ```
 
-+ Pre-training preparation
++ **Pre-training preparation**
 
   Based on the model of Librispeech training Online, there are two directories s0 and S1 in example/librispeech directory. Among them, S1 will use the Kaldi script to extract features in advance and save them. While the feature extraction of S0 is completed in CollateFunc (), the feature is extracted during the training process and will not be stored.
 
@@ -40,16 +40,16 @@ If you want to learn more about the WENET model, you can read the link. This art
   cd example/librispeech/s0
   ```
 
-  Setting the configuration file
+  **select and set the configuration file**
 
   + train_conformer.yaml ：offline model
   + train_conformer_bidecoder_large.yaml ：full attention
   + train_u2++_conformer.yaml：U2++ attention exists in L2R and R2L decoder
   + train_unified_conformer.yaml ：online model
 
-  When training the online model, change train_config=conf/train_unified_conformer.yaml in run.sh
+  When training the online model, **change train_config=conf/train_unified_conformer.yaml in run.sh**
 
-  modify "run.sh" to ensure the PYTHONPATH of the conda environment
+  modify "run.sh" to ensure the **PYTHONPATH** of the conda environment
 
   + source $ANACONDA_ROOT/bin/activate your_wenet
 
@@ -115,13 +115,11 @@ If you want to learn more about the WENET model, you can read the link. This art
   In the WeNet format file , each line records a data sample of seven tab-separated columns. For example, a line is as follows (tab replaced with newline here):
 
   ```
-  utt:BAC009S0764W0121
-  feat:/export/data/asr-data/OpenSLR/33/data_aishell/wav/test/S0764/BAC009S0764W0121.wav
-  feat_shape:4.2039375
-  text:甚至出现交易几乎停滞的情况
-  token:甚 至 出 现 交 易 几 乎 停 滞 的 情 况
-  tokenid:2474 3116 331 2408 82 1684 321 47 235 2199 2553 1319 307
-  token_shape:13,4233
+  utt:100-121669-0003
+  feat:./sdata/LibriSpeech/train-clean-360/100/121669/100-121669-0003.flac        feat_shape:14.06
+  text:BUT HE WAS SO SLY AND CAUTIOUS THAT NO ONE HAD EVER CAUGHT HIM IN THE ACT OF STEALING ALTHOUGH A GOOD MANY THINGS HAD BEEN MISSED AFTER THEY HAD FALLEN INTO THE OLD MAN'S WAY BARNEY HAD ONE SON NAMED TOM    
+  token:▁BUT ▁HE ▁WAS ▁SO ▁S LY ▁AND ▁CA UT IOUS ▁THAT ▁NO ▁ONE ▁HAD ▁EVER ▁CAUGHT ▁HIM ▁IN ▁THE ▁ACT ▁OF ▁STEAL ING ▁ALTHOUGH ▁A ▁GOOD ▁MANY ▁THINGS ▁HAD ▁BEEN ▁MISS ED ▁AFTER ▁THEY ▁HAD ▁FALLEN ▁INTO ▁THE ▁OLD ▁MAN ' S ▁WAY ▁BAR NEY ▁HAD ▁ONE ▁SON ▁NAMED ▁TOM 
+  tokenid:953 2333 4833 4160 3888 245 577 960 403 186 4515 3140 3217 2286 1834 1020 2378 2489 4516 470 3200 4280 183 553 429 2222 2899 4533 2286 782 2997 96 513 4526 2286 1929 2576 4516 3212 2891 2 347 4846 750 269 2286 3217 4185 3084 4593       token_shape:50,5002
   ```
 
   `feat_shape` is the duration(in seconds) of the wav.
@@ -133,14 +131,6 @@ If you want to learn more about the WENET model, you can read the link. This art
   The config of neural network structure, optimization parameter, loss parameters, and dataset can be set in a YAML format file.
 
   In `conf/`, we provide several models like transformer and conformer. see `conf/train_conformer.yaml` for reference.
-
-  - Use Tensorboard
-
-  The training takes several hours. The actual time depends on the number and type of your GPU cards. In an 8-card 2080 Ti machine, it takes about less than one day for 50 epochs. You could use tensorboard to monitor the loss.
-
-  ```
-  tensorboard --logdir tensorboard/$your_exp_name/ --port 12598 --bind_all
-  ```
 
 + Stage 5: Recognize wav using the trained model
 
