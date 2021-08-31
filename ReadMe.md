@@ -162,6 +162,12 @@ This article focuses on the detailed process of training and deployment. If you 
 + Stage 6: Export the trained model
 
   `wenet/bin/export_jit.py` will export the trained model using Libtorch. The exported model files can be easily used for inference in other programming languages such as C++.
+  
+  And here is the generated file,
+  
+  /home3/yuhang001/wenet/examples/sg_english/s0/exp/sp_spec_aug/final.zip
+  
+  And the file "/home3/yuhang001/wenet/examples/sg_english/s0/data/lang_char/train_960_unigram5000_units.txt" which will be used in wenet-kaldi should be rename as "words.txt"  when it's downloaded
 
 ### Deploy the model to android phones
 
@@ -180,7 +186,7 @@ This article focuses on the detailed process of training and deployment. If you 
 
 + Get your Android phone ready and turn on the USB debug option. When you're ready, connect your phone to your computer.
 + Prepare wenet Android project
-  + Wenet Android project code download in the window environmenthttps://github.com/wenet-e2e/wenet/archive/refs/heads/main.zip
+  + Wenet Android project code download in the window environment https://github.com/wenet-e2e/wenet/archive/refs/heads/main.zip
   + unzip
   + Need to train in the service area (Linux) model related files, download to the Window environment
     + exp/sp_spec_aug/final.zip
