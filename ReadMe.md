@@ -32,16 +32,18 @@ This article focuses on the detailed process of training and deployment. If you 
   conda install pytorch torchvision torchaudio=0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
   ```
 
-+ **Pre-training preparation**
++ **training preparation**
 
   Based on the model of Librispeech training Online, there are two directories s0 and S1 in example/librispeech directory. Among them, S1 will use the Kaldi script to extract features in advance and save them. While the feature extraction of S0 is completed in CollateFunc (), the feature is extracted during the training process and will not be stored.
 
   ```
+  cd example/librispeech/s1
+  or
   cd example/librispeech/s0
   ```
 
   **select and set the configuration file**
-
+  
   + train_conformer.yaml ：offline model
   + train_conformer_bidecoder_large.yaml ：full attention
   + train_u2++_conformer.yaml：U2++ attention exists in L2R and R2L decoder
@@ -49,21 +51,29 @@ This article focuses on the detailed process of training and deployment. If you 
 
   When training the online model, **change train_config=conf/train_unified_conformer.yaml in run.sh**
 
-  modify "run.sh" to ensure the **PYTHONPATH** of the conda environment
+  If the model cannot converge, the learning rate needs to be reduced lr= 0.0002 in train_unified_conformer.yaml
+
+  If you want to deploy the model to android, we can't use pitch when extracting features
+
+  so we can't use "steps/make_fbank_pitch.sh"
+
+  
+
+  modify "path.sh" to ensure the **PYTHONPATH** of the conda environment
 
   + source $ANACONDA_ROOT/bin/activate your_wenet
-
+  
   + export PYTHONPATH=./
-
+  
   + #Delete during the training phase that does not rely on the Kaldi script
-
+  
     <del>[ -f $KALDI_ROOT/tools/env.sh ] && . $KALDI_ROOT/tools/env.sh</del>
-
+  
   Modify run.sh based on the server environment
-
+  
   + Modify stage and stop_stage to determine the training phase
   + modify : export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
-
+  
   + If the server is not using cluster directly：./run.sh or nohup ./run.sh > log 2 1>&1 &
   + If the server has a cluster, run the run.sh command based on the service configuration.
     + cmd="./slurm.pl"
